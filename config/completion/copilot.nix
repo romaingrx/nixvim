@@ -1,8 +1,5 @@
-{ lib, config, ... }:
-{
-  options = {
-    copilot.enable = lib.mkEnableOption "Enable copilot module";
-  };
+{ lib, config, pkgs, ... }: {
+  options = { copilot.enable = lib.mkEnableOption "Enable copilot module"; };
   config = lib.mkIf config.copilot.enable {
     plugins.copilot-lua = {
       enable = true;
@@ -45,7 +42,8 @@
         cvs = false;
         "." = false;
       };
-      copilotNodeCommand = "node"; # Node.js version must be > 18.x
+      copilotNodeCommand =
+        "${pkgs.nodejs_22}/bin/node"; # Use Node.js 22.x instead of default 18.x
       serverOptsOverrides = { };
     };
   };
