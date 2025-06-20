@@ -4,6 +4,9 @@
     plugins.copilot-lua = {
       enable = true;
       nodePackage = pkgs.nodejs_22;
+
+      # Override settings to prevent any reference to nodejs_18
+      settings = { };
       panel = {
         enabled = false;
         autoRefresh = true;
@@ -43,8 +46,7 @@
         cvs = false;
         "." = false;
       };
-      copilotNodeCommand =
-        "${pkgs.nodejs_22}/bin/node"; # Use Node.js 22.x instead of default 18.x
+      # copilotNodeCommand handled by nodePackage setting
       serverOptsOverrides = { };
     };
   };
