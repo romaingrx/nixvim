@@ -3,6 +3,7 @@
   config = lib.mkIf config.copilot.enable {
     plugins.copilot-lua = {
       enable = true;
+      nodePackage = pkgs.nodejs_22;
       panel = {
         enabled = false;
         autoRefresh = true;
