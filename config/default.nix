@@ -1,5 +1,4 @@
-{ lib, config, ... }:
-{
+{ lib, config, ... }: {
   # Import all your configuration modules here
   imports = [
     ./bufferlines
@@ -24,6 +23,9 @@
   bufferlines.enable = lib.mkDefault true;
   colorschemes.enable = lib.mkDefault true;
   completion.enable = lib.mkDefault true;
+
+  # Explicitly disable copilot to prevent Node.js 18.x issues
+  copilot.enable = lib.mkDefault false;
   dap.enable = lib.mkDefault true;
   filetrees.enable = lib.mkDefault false;
   git.enable = lib.mkDefault true;
