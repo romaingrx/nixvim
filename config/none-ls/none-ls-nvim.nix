@@ -1,5 +1,4 @@
-{ lib, config, ... }:
-{
+{ lib, config, ... }: {
   options = {
     none-ls-nvim.enable = lib.mkEnableOption "Enable none-ls-nvim module";
   };
@@ -30,20 +29,12 @@
           statix.enable = true;
         };
         diagnostics = {
-          checkstyle = {
-            enable = true;
-          };
-          statix = {
-            enable = true;
-          };
+          checkstyle = { enable = true; };
+          statix = { enable = true; };
         };
         formatting = {
-          alejandra = {
-            enable = false;
-          };
-          nixfmt = {
-            enable = true;
-          };
+          alejandra = { enable = false; };
+          nixfmt = { enable = true; };
           prettier = {
             enable = true;
             settings = ''
@@ -52,12 +43,8 @@
               }
             '';
           };
-          google_java_format = {
-            enable = true;
-          };
-          stylua = {
-            enable = true;
-          };
+          google_java_format = { enable = true; };
+          stylua = { enable = true; };
           black = {
             enable = true;
             settings = ''

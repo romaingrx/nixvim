@@ -1,12 +1,5 @@
-{
-  lib,
-  config,
-  ...
-}:
-{
-  imports = [
-    ./telescope-nvim.nix
-  ];
+{ lib, config, ... }: {
+  imports = [ ./telescope-nvim.nix ];
 
   options = {
     telescope.enable = lib.mkEnableOption "Enable telescope module";

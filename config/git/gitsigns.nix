@@ -1,8 +1,5 @@
-{ lib, config, ... }:
-{
-  options = {
-    gitsigns.enable = lib.mkEnableOption "Enable gitsigns module";
-  };
+{ lib, config, ... }: {
+  options = { gitsigns.enable = lib.mkEnableOption "Enable gitsigns module"; };
   config = lib.mkIf config.gitsigns.enable {
     plugins.gitsigns = {
       enable = true;
@@ -13,10 +10,7 @@
     };
     keymaps = [
       {
-        mode = [
-          "n"
-          "v"
-        ];
+        mode = [ "n" "v" ];
         key = "<leader>gh";
         action = "gitsigns";
         options = {
@@ -61,10 +55,7 @@
         };
       }
       {
-        mode = [
-          "n"
-          "v"
-        ];
+        mode = [ "n" "v" ];
         key = "<leader>ghr";
         action = ":Gitsigns reset_hunk<CR>";
         options = {
@@ -73,10 +64,7 @@
         };
       }
       {
-        mode = [
-          "n"
-          "v"
-        ];
+        mode = [ "n" "v" ];
         key = "<leader>ghs";
         action = ":Gitsigns stage_hunk<CR>";
         options = {

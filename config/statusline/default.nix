@@ -1,13 +1,5 @@
-{
-  lib,
-  config,
-  ...
-}:
-{
-  imports = [
-    ./lualine.nix
-    ./staline.nix
-  ];
+{ lib, config, ... }: {
+  imports = [ ./lualine.nix ./staline.nix ];
 
   options = {
     statusline.enable = lib.mkEnableOption "Enable statusline module";

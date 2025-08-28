@@ -1,5 +1,4 @@
-{ lib, config, ... }:
-{
+{ lib, config, ... }: {
   options = {
     better-escape.enable = lib.mkEnableOption "Enable better-escape module";
   };
@@ -22,16 +21,8 @@
               j = "<Esc>";
             };
           };
-          v = {
-            j = {
-              k = "<Esc>";
-            };
-          };
-          s = {
-            j = {
-              k = "<Esc>";
-            };
-          };
+          v = { j = { k = "<Esc>"; }; };
+          s = { j = { k = "<Esc>"; }; };
         };
       };
     };

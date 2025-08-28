@@ -1,5 +1,4 @@
-{ lib, config, ... }:
-{
+{ lib, config, ... }: {
   options = {
     rose-pine.enable = lib.mkEnableOption "Enable rose-pine module";
   };
